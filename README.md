@@ -19,5 +19,5 @@ Project is created with:
 ### Backend
 * db/mongoose.js: Configures the database.
 * models: Defines different mongoose models.
-* routers: Defines routers for the main express app.
+* routes: Defines routers for the main express app.
 * app.js: Instantiates and configures the main app.
