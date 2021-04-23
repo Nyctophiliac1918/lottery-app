@@ -1,0 +1,32 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 86%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    margin: 0 7%;
+}
+
+.topic {
+    margin: 1% 7% 0;
+    text-align: center;
+    justify-content: center;
+}
+
+.generator {
+    display: block;
+    width: 25%;
+    float: right;
+}
+
+.intro {
+    margin: 4% 7% 0;
+    text-align: center;
+    justify-content: center;
+}
+
+.float {
+    float: center;
+    display: flex;
+}
