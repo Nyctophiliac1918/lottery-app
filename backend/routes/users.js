@@ -40,10 +40,12 @@ async function addUser(req, res){
   }
 }
 
+// API endpoint for finding all the users.
 router.get('/', function(req, res, next) {
   res.send({name: "karan"});
 });
 
+// API Endpoint for posting an user.
 router.post('/', addUser);
 
 module.exports = router;
