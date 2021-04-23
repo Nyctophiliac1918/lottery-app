@@ -16,6 +16,7 @@
     "mdb-ui-kit": "^3.5.0",
     "mdbreact": "^5.0.2",
     "moment": "^2.29.1",
+    "netlify-cli": "^3.21.8",
     "react": "^17.0.2",
     "react-bootstrap": "^1.5.2",
     "react-color": "^2.19.3",

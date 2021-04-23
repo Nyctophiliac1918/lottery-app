@@ -42,7 +42,7 @@ export default function OutlinedCard() {
         const fetchEvents = async () => {
             try {
                 setData({events: data.events, isFetching: true});
-                const response = await axios.get("http://localhost:8080/events");
+                const response = await axios.get("https://lottery-app-1918.herokuapp.com/events");
                 setData({events: response.data, isFetching: false});
                 console.log(data.events);
             } catch (e) {
@@ -56,7 +56,7 @@ export default function OutlinedCard() {
     React.useEffect(() => {
         const fetchWinners = async () => {
             try {
-                const response = await axios.get("http://localhost:8080/winners");
+                const response = await axios.get("https://lottery-app-1918.herokuapp.com/winners");
             } catch (e) {
                 console.log(e);
             }

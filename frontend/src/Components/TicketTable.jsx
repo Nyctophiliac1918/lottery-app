@@ -37,7 +37,7 @@ export default function TicketTable(props) {
     const handleSubmit = (e) => {
     
         axios
-        .post('http://localhost:8080/tickets', props.data)
+        .post('https://lottery-app-1918.herokuapp.com/tickets', props.data)
         .then((res) => {
             setTickets(res.data.tickets);
             //console.log(res.data.tickets[0]);

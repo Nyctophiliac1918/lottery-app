@@ -9,7 +9,6 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
-import { ClickAwayListener } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     table: {
@@ -42,7 +41,7 @@ const EventsTable = (props) => {
         const fetchEvents = async () => {
             try {
                 setEvents(events);
-                const response = await axios.get("http://localhost:8080/events")
+                const response = await axios.get("https://lottery-app-1918.herokuapp.com/events")
                 setEvents(response.data);
                 //console.log(data.events);
             } catch (e) {
@@ -58,7 +57,7 @@ const EventsTable = (props) => {
         console.log(e.currentTarget.id);
         setSubmitted(true);
 
-        axios.get('http://localhost:8080/events/participate', {
+        axios.get('https://lottery-app-1918.herokuapp.com/events/participate', {
             params: {
                 ticketid: ticketID,
                 id: e.currentTarget.id

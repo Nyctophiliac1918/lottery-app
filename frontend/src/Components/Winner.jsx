@@ -38,7 +38,7 @@ const Winner = () => {
         const fetchWinners = async () => {
             try {
                 setWinners(winners);
-                const response = await axios.get("http://localhost:8080/winners/list")
+                const response = await axios.get("https://lottery-app-1918.herokuapp.com/winners/list")
                 console.log(response.data);
                 setWinners(response.data);
                 console.log(winners);
@@ -62,6 +62,7 @@ const Winner = () => {
                                 <TableCell>Sr. No.</TableCell>
                                 <TableCell align="right">Date for Draw</TableCell>
                                 <TableCell align="right">Name</TableCell>
+                                <TableCell align="right">Mobile Number</TableCell>
                                 <TableCell align="right">Reward</TableCell>
                             </TableRow>
                         </TableHead>
@@ -71,9 +72,10 @@ const Winner = () => {
                                 <TableCell component="th" scope="row">
                                     {index+1}
                                 </TableCell>
-                                <TableCell align="right">{ticket.user[0].email}</TableCell>
+                                <TableCell align="right">{ticket.event[0].date}</TableCell>
                                 <TableCell align="right">{ticket.user[0].name}</TableCell>
-                                <TableCell align="right">{ticket.user[0]._id}</TableCell>
+                                <TableCell align="right">{ticket.user[0].mobile}</TableCell>
+                                <TableCell align="right">{ticket.event[0].reward}</TableCell>
                             </TableRow>
                         ))}
                         </TableBody>

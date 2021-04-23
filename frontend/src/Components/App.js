@@ -9,9 +9,7 @@ import Winner from './Winner';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  useRouteMatch,
-  useParams
+  Route
 } from "react-router-dom";
 
 function App() {

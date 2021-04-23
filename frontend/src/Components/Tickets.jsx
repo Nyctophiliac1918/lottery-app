@@ -50,7 +50,7 @@ export default function Tickets() {
     };
 
     axios
-      .post('http://localhost:8080/signin', user)
+      .post('https://lottery-app-1918.herokuapp.com/signin', user)
       .then((res) => {
         //console.log(res.data);
         setData(res.data[0]);

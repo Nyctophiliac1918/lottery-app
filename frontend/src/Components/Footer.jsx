@@ -6,7 +6,7 @@ const Footer = () => (
         <section class="mb-6">
         <a
             class="btn btn-link btn-floating btn-lg text-dark m-1"
-            href="#!"
+            href="https://www.facebook.com/karan.saraswat.50/"
             role="button"
             data-mdb-ripple-color="dark"
             ><i class="fab fa-facebook-f"></i>
@@ -14,7 +14,7 @@ const Footer = () => (
 
         <a
             class="btn btn-link btn-floating btn-lg text-dark m-1"
-            href="#!"
+            href="https://twitter.com/KaranSaraswat2"
             role="button"
             data-mdb-ripple-color="dark"
             ><i class="fab fa-twitter"></i>
@@ -22,7 +22,7 @@ const Footer = () => (
 
         <a
             class="btn btn-link btn-floating btn-lg text-dark m-1"
-            href="#!"
+            href="mailto:karansaraswat.che18@itbhu.ac.in"
             role="button"
             data-mdb-ripple-color="dark"
             ><i class="fab fa-google"></i>
@@ -30,7 +30,7 @@ const Footer = () => (
 
         <a
             class="btn btn-link btn-floating btn-lg text-dark m-1"
-            href="#!"
+            href="https://www.instagram.com/karansaraswat1918/"
             role="button"
             data-mdb-ripple-color="dark"
             ><i class="fab fa-instagram"></i>
@@ -38,7 +38,7 @@ const Footer = () => (
 
         <a
             class="btn btn-link btn-floating btn-lg text-dark m-1"
-            href="#!"
+            href="https://www.linkedin.com/in/karan-saraswat-a0527417b/"
             role="button"
             data-mdb-ripple-color="dark"
             ><i class="fab fa-linkedin"></i>
@@ -46,7 +46,7 @@ const Footer = () => (
 
         <a
             class="btn btn-link btn-floating btn-lg text-dark m-1"
-            href="#!"
+            href="https://github.com/Nyctophiliac1918"
             role="button"
             data-mdb-ripple-color="dark"
             ><i class="fab fa-github"></i>
