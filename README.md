@@ -17,8 +17,7 @@ Project is created with:
 * public: contains all the static assets like html, logos and styles file which are to be served.
 
 ### Backend
-* src
-  * db/mongoose.js: Configures the database.
-  * models: Defines different mongoose models.
-  * routers: Defines routers for the main express app.
-  * app.js: Instantiates and configures the main app.
+* db/mongoose.js: Configures the database.
+* models: Defines different mongoose models.
+* routers: Defines routers for the main express app.
+* app.js: Instantiates and configures the main app.
