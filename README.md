@@ -2,7 +2,7 @@
 
 ## Technologies
 Project is created with:
-* Reactjs, Semantic UI (Frontend)
+* Reactjs, Material UI (Frontend)
 * Nodejs, Express (Backend)
 * Mongodb (Database)
 
