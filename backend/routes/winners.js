@@ -50,6 +50,10 @@ async function getWinner( req, res){
     })
 }
 
+// API Endpoint for generating the new winners.
 router.get('/', generateWinner);
+
+// API Endpoint for getting the winners list
 router.get('/list', getWinner);
+
 module.exports = router;
