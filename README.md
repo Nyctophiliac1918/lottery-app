@@ -23,5 +23,5 @@ Project is created with:
 * app.js: Instantiates and configures the main app.
 
 ### Links
-Backend: https://lottery-app-1918.herokuapp.com
-Frontend: https://lottery-app-1918.netlify.app
+* Backend: https://lottery-app-1918.herokuapp.com
+* Frontend: https://lottery-app-1918.netlify.app
