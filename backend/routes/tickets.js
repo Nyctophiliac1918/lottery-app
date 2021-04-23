@@ -3,10 +3,12 @@ var router = express.Router();
 var {Ticket} = require('../models/Ticket')
 var {User} = require('../models/User')
 
+// API endpoint for getting all the tickets handed out.
 router.get('/', function(req, res, next) {
     res.send({name: "karan"});
 });
 
+// API Endpoint for generating a new ticket.
 router.post('/', function(req,res)
 {
 
