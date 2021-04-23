@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 //Load database URL from the environment variables
-const dbURL = process.env.DATABASE_URL;
+const dbURL = "mongodb+srv://karansaraswat2:karan3015@cluster0.nnzew.mongodb.net/LotteryDB";
 
 //This method will be invoked in the index.js file
 module.exports = function(app){

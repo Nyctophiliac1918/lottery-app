@@ -9,7 +9,8 @@ async function generateWinner( req, res) {
 
     console.log(moment().format('LT'));
     Event.find({resultAnnounced: false, date: {$lte: moment().format('L')}, time: {$lte: moment().format('LT')}}, function(err,result) {
-        
+
+        let arr=[];
         if(result.length) {result.forEach((event)=> { 
             
             let { users } = event;
@@ -27,14 +28,18 @@ async function generateWinner( req, res) {
                             event: event
                         })
             
+                        arr.push(eventWinner);
                         eventWinner.save();
                         event.resultAnnounced = true;
                         event.save();
-        
+                        
                     }
                 }); 
             }
         })}
+        if(arr.length)
+            return res.send(arr);
+        else return res.send("No events")
     })
 }
 
