@@ -45,7 +45,8 @@ async function generateWinner( req, res) {
 
 async function getWinner( req, res){
 
-    Winner.find({}, function(err, result) {
+    await Winner.find({}).limit(7)
+    .exec( function(err, result) {
         return res.send(result);
     })
 }
