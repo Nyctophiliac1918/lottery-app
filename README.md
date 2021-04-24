@@ -22,6 +22,6 @@ Project is created with:
 * routes: Defines routers for the main express app.
 * app.js: Instantiates and configures the main app.
 
-### Links
+### Deployed Links
 * Backend: https://lottery-app-1918.herokuapp.com
 * Frontend: https://lottery-app-1918.netlify.app
