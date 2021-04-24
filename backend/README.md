@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# lottery-app-api
-=======
 ## API Endpoints
 
 ```
@@ -19,4 +16,3 @@ https://lottery-app-1918.herokuapp.com/tickets              : for generating a n
 https://lottery-app-1918.herokuapp.com/events               : for saving a new event.
 https://lottery-app-1918.herokuapp.com/signin               : for posting an user.
 ```
->>>>>>> eba8dc27b7f389ca47c47202a32255bb4e151280
