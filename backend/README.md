@@ -7,7 +7,7 @@ https://lottery-app-1918.herokuapp.com/events               : for getting all th
 https://lottery-app-1918.herokuapp.com/events/participate   : endpoint which allows user to participate in the game and 
                                                               checks that he/she can participate in only one
                                                               event with a single ticket
-https://lottery-app-1918.herokuapp.com/signin               : for finding all the users.
+https://lottery-app-1918.herokuapp.com/users                : for finding all the users.
 https://lottery-app-1918.herokuapp.com/winners              : for generating the new winners.
 https://lottery-app-1918.herokuapp.com/winners/list         : for getting the previous week's winners list.
 
