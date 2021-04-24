@@ -3,12 +3,20 @@ var router = express.Router();
 var {Ticket} = require('../models/Ticket')
 var {User} = require('../models/User')
 
-// API endpoint for getting all the tickets handed out.
 router.get('/', function(req, res, next) {
-    res.send({name: "karan"});
+    Ticket.find({}, function(err, tickets)
+    {
+        if(err)
+            console.log(err);
+        else 
+        {
+            if(tickets.length)
+                res.status(200).send(tickets);
+            else res.status(404).send("No tickets found");
+        }
+    })
 });
 
-// API Endpoint for generating a new ticket.
 router.post('/', function(req,res)
 {
 
@@ -21,6 +29,7 @@ router.post('/', function(req,res)
         User.find({'mobile': req.body.mobile }, function(err, foundUser){
             if(err){
                 console.log(err);
+                return res.sendStatus(200);
             }
             else{
                 if(foundUser.length){
@@ -29,6 +38,7 @@ router.post('/', function(req,res)
                         return res.send(foundUser[0]);
                     });
                 }
+                else return res.status(404).send("No user found associated with this number");
             }
         });
     

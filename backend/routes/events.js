@@ -5,18 +5,17 @@ var {Ticket} = require('../models/Ticket')
 var {User} = require('../models/User')
 var moment = require('moment');
 
-// API endpoint for finding the next events going to take place
+
 router.get('/', function(req, res, next) {
-    Event.find({resultAnnounced: false, date: {$gt: moment().format('L')}}, null, {sort: {date: 1}}, function (err, users) {
+    Event.find({resultAnnounced: false, date: {$gt: moment().format('L')}}, null, {sort: {date: 1}}, function (err, events) {
         if (err) {
             console.log(err);
             process.exit(1);
         }
-        else res.send(users);
+        else res.status(200).send(events);
     });
 });
 
-// API endpoint which allows user to participate in the game and checks that he/she can participate in only one event wth one ticket.
 router.get('/participate', function(req, res, next) {
     let ans=req.query.id;
     let ticket = req.query.ticketid;
@@ -73,9 +72,9 @@ router.get('/participate', function(req, res, next) {
                             });
                         }
                         if(!flag)
-                            return res.send("Can participate");
+                            return res.status(200).send("Can participate");
                         else{
-                            return res.status(404).send("Oh uh, something went wrong");
+                            return res.status(404).send("Already participated");
                         }
                     }
                 }
@@ -85,12 +84,12 @@ router.get('/participate', function(req, res, next) {
 
 });
 
-// Call for saving a new event
 router.post('/', function(req,res)
 {
 
     try
     {
+        console.log(moment().format('HH:mm'));
         let { reward, date, time } = req.body;
         const event = new Event ({
             reward: reward,

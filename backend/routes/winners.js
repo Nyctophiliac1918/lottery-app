@@ -32,28 +32,27 @@ async function generateWinner( req, res) {
                         eventWinner.save();
                         event.resultAnnounced = true;
                         event.save();
-                        
                     }
                 }); 
             }
         })}
         if(arr.length)
             return res.send(arr);
-        else return res.send("No events")
+        else return res.send("No event for the draw. Please check the previous winners.")
     })
 }
 
 async function getWinner( req, res){
 
-    Winner.find({}, function(err, result) {
+    // gives you a maximum of 7 winners
+    await Winner.find({}).limit(7)
+    .exec( function(err, result) {
         return res.send(result);
     })
 }
 
-// API Endpoint for generating the new winners.
 router.get('/', generateWinner);
 
-// API Endpoint for getting the winners list
 router.get('/list', getWinner);
 
 module.exports = router;
