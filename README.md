@@ -25,3 +25,27 @@ Project is created with:
 ### Deployed Links
 * Backend: https://lottery-app-1918.herokuapp.com
 * Frontend: https://lottery-app-1918.netlify.app
+
+## Setup
+To run this project, install it locally using npm and yarn, respectively.
+
+### Backend (assuming in the root directory)
+
+Make a .env file and give a database uri as DATABASE_URL.
+Make sure your database is running properly.
+
+Then
+For development
+```
+$ cd backend
+$ npm install
+$ node app.js
+```
+
+### Frontend (assuming in the root directory)
+
+```
+$ cd ./
+$ yarn or yarn add
+$ npm start
+```
