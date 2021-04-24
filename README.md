@@ -1,5 +1,7 @@
 # lottery-app
 
+This is a web app, where you can put up lottery draw events as well as participate in them. You can see the upcoming tasks and the previous draw winners too.
+
 ## Technologies
 Project is created with:
 * Reactjs, Material UI (Frontend)
