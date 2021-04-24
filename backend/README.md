@@ -1,5 +1,6 @@
 ## API Endpoints
 
+```
 * https://lottery-app-1918.herokuapp.com/tickets (GET)  for getting all the tickets handed out.
 * https://lottery-app-1918.herokuapp.com/tickets (POST)  for generating a new ticket.
 * https://lottery-app-1918.herokuapp.com/events (GET)  for finding the next events going to take place.
@@ -9,3 +10,4 @@
 * https://lottery-app-1918.herokuapp.com/signin (POST)  for posting an user.
 * https://lottery-app-1918.herokuapp.com/winners (GET)  for generating the new winners.
 * https://lottery-app-1918.herokuapp.com/winners/list (GET)  for getting the winners list.
+```
