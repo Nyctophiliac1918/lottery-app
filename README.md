@@ -42,6 +42,8 @@ $ npm install
 $ node app.js
 ```
 
+Default port has been set to 8080.
+
 ### Frontend (assuming in the root directory)
 
 ```
@@ -49,3 +51,5 @@ $ cd ./
 $ yarn or yarn add
 $ npm start
 ```
+
+Default port has been set to 3000
