@@ -1,5 +1,7 @@
 # lottery-app
 
+This is a web app, where you can put up lottery draw events as well as participate in them. You can see the upcoming tasks and the previous draw winners too.
+
 ## Technologies
 Project is created with:
 * Reactjs, Material UI (Frontend)
@@ -22,6 +24,34 @@ Project is created with:
 * routes: Defines routers for the main express app.
 * app.js: Instantiates and configures the main app.
 
-### Links
+### Deployed Links
 * Backend: https://lottery-app-1918.herokuapp.com
 * Frontend: https://lottery-app-1918.netlify.app
+
+## Setup
+To run this project, install it locally using npm and yarn, respectively.
+
+### Backend (assuming in the root directory)
+
+Make a .env file and give a database uri as DATABASE_URL.
+Make sure your database is running properly.
+
+Then
+For development
+```
+$ cd backend
+$ npm install
+$ node app.js
+```
+
+Default port has been set to 8080.
+
+### Frontend (assuming in the root directory)
+
+```
+$ cd ./
+$ yarn or yarn add
+$ npm start
+```
+
+Default port has been set to 3000

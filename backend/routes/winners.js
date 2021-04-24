@@ -44,7 +44,10 @@ async function generateWinner( req, res) {
 
 async function getWinner( req, res){
 
+<<<<<<< HEAD
     // gives you a maximum of 7 winners
+=======
+>>>>>>> eba8dc27b7f389ca47c47202a32255bb4e151280
     await Winner.find({}).limit(7)
     .exec( function(err, result) {
         return res.send(result);
