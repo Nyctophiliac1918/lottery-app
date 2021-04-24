@@ -16,3 +16,5 @@ https://lottery-app-1918.herokuapp.com/tickets              : for generating a n
 https://lottery-app-1918.herokuapp.com/events               : for saving a new event.
 https://lottery-app-1918.herokuapp.com/signin               : for posting an user.
 ```
+
+* API Documentation done using `Swagger Inspector` and can be found in `api documentation.json` file. 
