@@ -10,7 +10,7 @@ async function generateWinner( req, res) {
     console.log(moment().format('LT'));
     Event.find({resultAnnounced: false, date: {$lte: moment().format('L')}, time: {$lte: moment().format('LT')}}, function(err,result) {
 
-        let arr=[];
+        const arr=[];
         if(result.length) {result.forEach((event)=> { 
             
             let { users } = event;
@@ -24,12 +24,12 @@ async function generateWinner( req, res) {
                     }
                     else{
                         let eventWinner = new Winner({
-                            user: users[rn],
+                            user: foundUser,
                             event: event
                         })
             
-                        arr.push(eventWinner);
                         eventWinner.save();
+                        arr.push(eventWinner);
                         event.resultAnnounced = true;
                         event.save();
                     }
