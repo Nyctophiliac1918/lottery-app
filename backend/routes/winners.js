@@ -8,14 +8,15 @@ var moment = require('moment');
 async function generateWinner( req, res) {
 
     console.log(moment().format('LT'));
-    Event.find({resultAnnounced: false, date: {$lte: moment().format('L')}, time: {$lte: moment().format('LT')}}, function(err,result) {
+    Event.find({resultAnnounced: false, date: {$lte: moment().format('L')}}, function(err,result) {
 
+        //console.log(result);
         const arr=[];
         if(result.length) {result.forEach((event)=> { 
             
             let { users } = event;
             let len = users.length;
-            let rn = Math.floor((Math.random()*len));
+            let rn = Math.floor(Math.random()*len);
             
             if(users.length){
                 User.find({'mobile': users[rn] }, function(err, foundUser){
@@ -28,8 +29,8 @@ async function generateWinner( req, res) {
                             event: event
                         })
             
-                        eventWinner.save();
                         arr.push(eventWinner);
+                        eventWinner.save();
                         event.resultAnnounced = true;
                         event.save();
                     }
@@ -44,10 +45,7 @@ async function generateWinner( req, res) {
 
 async function getWinner( req, res){
 
-<<<<<<< HEAD
     // gives you a maximum of 7 winners
-=======
->>>>>>> eba8dc27b7f389ca47c47202a32255bb4e151280
     await Winner.find({}).limit(7)
     .exec( function(err, result) {
         return res.send(result);

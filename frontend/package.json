@@ -11,26 +11,17 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
-    "clsx": "^1.1.1",
-    "formik": "^2.2.6",
-    "mdb-ui-kit": "^3.5.0",
-    "mdbreact": "^5.0.2",
-    "moment": "^2.29.1",
-    "netlify-cli": "^3.21.8",
+    "netlify-cli": "^2.37.0",
+    "postcss-normalize": "^10.0.1",
     "react": "^17.0.2",
-    "react-bootstrap": "^1.5.2",
-    "react-color": "^2.19.3",
     "react-dom": "^17.0.2",
-    "react-hook-form": "^7.2.3",
-    "react-material-ui-form-validator": "^2.1.4",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1",
-    "yup": "^0.32.9"
+    "react-scripts": "^5.0.1",
+    "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -51,5 +42,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^7.7.2"
   }
 }

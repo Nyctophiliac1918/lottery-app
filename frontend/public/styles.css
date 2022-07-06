@@ -1,11 +1,21 @@
 footer {
-    position: fixed;
-    bottom: 0;
     width: 86%;
     background-color: red;
     color: white;
     text-align: center;
     margin: 0 7%;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .topic {
@@ -14,16 +24,20 @@ footer {
     justify-content: center;
 }
 
-.generator {
-    display: block;
-    width: 25%;
-    float: right;
-}
-
 .intro {
-    margin: 4% 7% 0;
+    flex-grow: 1;
+    margin: 4% 7%;
     text-align: center;
     justify-content: center;
+}
+
+.link {
+    color: white;
+}
+
+.link:hover {
+    color: var(--blue);
+    text-decoration: none;
 }
 
 .float {

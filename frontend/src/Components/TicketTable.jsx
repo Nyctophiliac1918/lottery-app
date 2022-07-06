@@ -11,6 +11,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { setUser } from '../lib/user';
 
 const useStyles = makeStyles((theme) => ({
     table: {
@@ -26,40 +27,63 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor:"#f1f1f1",
     },
     submit: {
-        margin: theme.spacing(3, 0, 2),
+        margin: theme.spacing(3, 0, 1),
     },
 }));
 
 export default function TicketTable(props) {
     const classes = useStyles();
     const [tickets, setTickets] = useState(props.data.tickets);
+    const [ticketAdded, setTicketAdded] = useState(false);
 
     const handleSubmit = (e) => {
-    
+        setTicketAdded(true);
         axios
-        .post('https://lottery-app-1918.herokuapp.com/tickets', props.data)
+        .post(`${process.env.REACT_APP_BACKEND_URL}/tickets`, props.data)
         .then((res) => {
+            setUser(res.data);
             setTickets(res.data.tickets);
-            //console.log(res.data.tickets[0]);
+            setTimeout(() => setTicketAdded(false), 1000);
         })
         .catch(err => {
             console.log(err);
+            setTicketAdded(false);
         });
     };
 
+    const handleLogout = () => {
+        setUser({});
+        window.location.reload();
+    }
+
     return (
-        <div className="topic">
-            <div className="generator">
-                <Button
-                    type="submit"
-                    fullWidth
-                    className= {classes.submit}
-                    onClick= { handleSubmit }
-                    variant="contained"
-                    color="secondary"
-                >
-                    Generate a Raffle Ticket!
-                </Button>
+        <div className="intro topic" style={{marginTop: 0}}>
+            <div className='d-flex'>
+                <div className="generator">
+                    <Button
+                        type="submit"
+                        fullWidth
+                        className= {classes.submit}
+                        onClick= { handleSubmit }
+                        variant="contained"
+                        color="primary"
+                    >
+                        Generate a Raffle Ticket!
+                    </Button>
+                    { ticketAdded && <h6 className="error" style={{"color":"green"}}>Ticket successfully added!</h6> }
+                </div>
+                <div>
+                    <Button
+                        type="submit"
+                        fullWidth
+                        className= {classes.submit}
+                        onClick= { handleLogout }
+                        variant="contained"
+                        color="secondary"
+                    >
+                        Logout
+                    </Button>
+                </div>
             </div>
             <div className={classes.root}>
                 <Grid container spacing={3}>

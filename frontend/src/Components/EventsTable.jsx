@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -9,6 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
+import { getUser } from '../lib/user';
 
 const useStyles = makeStyles((theme) => ({
     table: {
@@ -32,18 +33,17 @@ const EventsTable = (props) => {
     const classes = useStyles();
     let { ticketID } = props.match.params;
     
-    const [events, setEvents] = React.useState([]);
-    const [submitted, setSubmitted] = React.useState(false);
-    const [errors, setErrors] = React.useState();
-    const [success, setSuccess] = React.useState();
+    const [events, setEvents] = useState([]);
+    const [errors, setErrors] = useState();
+    const [success, setSuccess] = useState();
+    const user = getUser();
 
-    React.useEffect(() => {
+    useEffect(() => {
         const fetchEvents = async () => {
             try {
                 setEvents(events);
-                const response = await axios.get("https://lottery-app-1918.herokuapp.com/events")
+                const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/events`);
                 setEvents(response.data);
-                //console.log(data.events);
             } catch (e) {
                 console.log(e);
                 setEvents(events);
@@ -54,10 +54,8 @@ const EventsTable = (props) => {
 
     const handleClick = (e) => {
         e.preventDefault();
-        console.log(e.currentTarget.id);
-        setSubmitted(true);
 
-        axios.get('https://lottery-app-1918.herokuapp.com/events/participate', {
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/events/participate`, {
             params: {
                 ticketid: ticketID,
                 id: e.currentTarget.id
@@ -69,10 +67,20 @@ const EventsTable = (props) => {
                 setSuccess("You have been added to the Draw.")
             setErrors(null);
         }).catch(err => {
-            setErrors("You have already participated in this event");
+            setErrors("Some error happened!");
             setSuccess(null);
-            setSubmitted(false);
         });
+    }
+
+    const alreadyParticipated = (id) => {
+        let participated = false;
+        user.event.forEach(event => {
+            if (event == id) {
+                participated = true;
+            }
+        });
+
+        return participated;
     }
 
     return (
@@ -91,22 +99,22 @@ const EventsTable = (props) => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                    {events.map((ticket,index) => (
-                        <TableRow key={ticket._id}>
+                    {events.map((event, index) => (
+                        <TableRow key={event._id}>
                             <TableCell component="th" scope="row">
                                 {index+1}
                             </TableCell>
-                            <TableCell align="right">{ticket.date}</TableCell>
-                            <TableCell align="right">{ticket.reward}</TableCell>
+                            <TableCell align="right">{event.date}</TableCell>
+                            <TableCell align="right">{event.reward}</TableCell>
                             <TableCell align="right">
                                 <Button
                                     // type="submit"
-                                    id = {ticket._id}
-                                    name = {ticket._id}
-                                    variant= "contained"
-                                    disabled= {submitted}
-                                    onClick = {handleClick}
-                                    value = {ticket._id}
+                                    id={event._id}
+                                    name={event._id}
+                                    variant="contained"
+                                    disabled={alreadyParticipated(event._id)}
+                                    onClick={handleClick}
+                                    value={event._id}
                                 >Enter</Button>
                             </TableCell>
                         </TableRow>

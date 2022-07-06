@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Tickets from './Tickets';
-import './App.css';
 import Header from './Header';
 import Events from './Events';
 import Footer from './Footer';
@@ -14,9 +13,9 @@ import {
 
 function App() {
     return (
-    <div>
-      <Header />
+    <div className='wrapper'>
       <Router>
+        <Header />
         <Switch>
           <Route path="/winners">
             <Winner />

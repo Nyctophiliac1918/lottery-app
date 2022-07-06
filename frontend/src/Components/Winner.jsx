@@ -7,7 +7,6 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import Button from '@material-ui/core/Button';
 import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
@@ -38,10 +37,8 @@ const Winner = () => {
         const fetchWinners = async () => {
             try {
                 setWinners(winners);
-                const response = await axios.get("https://lottery-app-1918.herokuapp.com/winners/list")
-                console.log(response.data);
+                const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/winners/list`)
                 setWinners(response.data);
-                console.log(winners);
             } catch (e) {
                 console.log(e);
                 setWinners(winners);
