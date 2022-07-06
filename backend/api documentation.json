@@ -1,0 +1,312 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "defaultTitle",
+    "description": "defaultDescription",
+    "version": "0.1"
+  },
+  "servers": [
+    {
+      "url": "https://lottery-app-1918.herokuapp.com"
+    }
+  ],
+  "paths": {
+    "/winners/list": {
+      "get": {
+        "description": "Auto generated using Swagger Inspector",
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "https://lottery-app-1918.herokuapp.com"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://lottery-app-1918.herokuapp.com"
+        }
+      ]
+    },
+    "/events": {
+      "get": {
+        "description": "Auto generated using Swagger Inspector",
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "https://lottery-app-1918.herokuapp.com"
+          }
+        ]
+      },
+      "post": {
+        "description": "Auto generated using Swagger Inspector",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/body"
+              },
+              "examples": {
+                "0": {
+                  "value": "{\n    \"reward\": \"TV\",\n    \"date\": \"04/29/2021\",\n    \"time\": \"00:01\"\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "text/plain; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "https://lottery-app-1918.herokuapp.com"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://lottery-app-1918.herokuapp.com"
+        }
+      ]
+    },
+    "/tickets": {
+      "get": {
+        "description": "Auto generated using Swagger Inspector",
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "https://lottery-app-1918.herokuapp.com"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://lottery-app-1918.herokuapp.com"
+        }
+      ]
+    },
+    "/events/partcipate": {
+      "get": {
+        "description": "Auto generated using Swagger Inspector",
+        "responses": {
+          "404": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "text/html; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "https://lottery-app-1918.herokuapp.com"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://lottery-app-1918.herokuapp.com"
+        }
+      ]
+    },
+    "/signin/users": {
+      "get": {
+        "description": "Auto generated using Swagger Inspector",
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector"
+          }
+        },
+        "servers": [
+          {
+            "url": "https://lottery-app-1918.herokuapp.com"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://lottery-app-1918.herokuapp.com"
+        }
+      ]
+    },
+    "/signin": {
+      "post": {
+        "description": "Auto generated using Swagger Inspector",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/body_1"
+              },
+              "examples": {
+                "0": {
+                  "value": "{\n    \"name\": \"Fox\",\n    \"email\": \"sunilsharma@gmail.com\",\n    \"mobile\": \"7015007896\"\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "https://lottery-app-1918.herokuapp.com"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://lottery-app-1918.herokuapp.com"
+        }
+      ]
+    },
+    "/winners": {
+      "get": {
+        "description": "Auto generated using Swagger Inspector",
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "text/html; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "https://lottery-app-1918.herokuapp.com"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://lottery-app-1918.herokuapp.com"
+        }
+      ]
+    },
+    "/": {
+      "get": {
+        "description": "Auto generated using Swagger Inspector",
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "text/html; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "https://lottery-app-1918.herokuapp.com"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://lottery-app-1918.herokuapp.com"
+        }
+      ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "body": {
+        "type": "object",
+        "properties": {
+          "reward": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "time": {
+            "type": "string"
+          }
+        }
+      },
+      "body_1": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "mobile": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
