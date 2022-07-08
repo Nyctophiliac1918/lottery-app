@@ -6,30 +6,28 @@ async function addUser(req, res){
 
   try{
     await User.find({ 'mobile': req.body.mobile }, function(err, result) {
-        if (err) throw err;
-        if (result.length) {
-          return res.send(result);
-        } else {
-          let id;
-          let { name, email, mobile } = req.body;
-          const user = new User({name, email, mobile});
-          user.save((err)=>{
-            id=user._id;
-            User.findById(id, function(err, foundUser){
-              console.log(foundUser);
-              if(err){
-                console.log(err);
-              }
-              else{
-                return res.send(foundUser);
-              }
-            })
-          });
-        }
-      })
-    }
-
-  catch (err) {
+      if (err) throw err;
+      if (result.length) {
+        return res.send(result);
+      } else {
+        let id;
+        let { name, email, mobile } = req.body;
+        const user = new User({name, email, mobile});
+        user.save((err)=>{
+          id=user._id;
+          User.findById(id, function(err, foundUser){
+            console.log(foundUser);
+            if(err){
+              console.log(err);
+            }
+            else{
+              return res.send(foundUser);
+            }
+          })
+        });
+      }
+    })
+  } catch (err) {
     console.log(err);
     return res.status(500).send(err.message);
   }

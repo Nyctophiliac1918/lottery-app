@@ -1,7 +1,8 @@
 var _user = {};
 
 export const setUser = (user) => {
-  _user = user;
+  if (user)
+    _user = user;
 }
 
 export const getUser = () => {
@@ -10,3 +11,12 @@ export const getUser = () => {
 
   return _user;
 };
+
+export const setUsersData = ({availableTickets, events}) => {
+  const user = _user;
+
+  user.tickets = availableTickets;
+  user.event = events;
+
+  _user = user;
+}

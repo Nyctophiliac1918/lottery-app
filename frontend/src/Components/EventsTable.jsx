@@ -9,7 +9,8 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
-import { getUser } from '../lib/user';
+import { useHistory } from 'react-router-dom';
+import { getUser, setUsersData } from '../lib/user';
 
 const useStyles = makeStyles((theme) => ({
     table: {
@@ -32,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
 const EventsTable = (props) => {
     const classes = useStyles();
     let { ticketID } = props.match.params;
+    const history = useHistory();
     
     const [events, setEvents] = useState([]);
     const [errors, setErrors] = useState();
@@ -55,10 +57,12 @@ const EventsTable = (props) => {
     const handleClick = (e) => {
         e.preventDefault();
 
+        const eventId = e.currentTarget.id;
+
         axios.get(`${process.env.REACT_APP_BACKEND_URL}/events/participate`, {
             params: {
                 ticketid: ticketID,
-                id: e.currentTarget.id
+                id: eventId
             }
         })
         .then(function (response) {
@@ -66,6 +70,12 @@ const EventsTable = (props) => {
             if(response.data === "Can participate")
                 setSuccess("You have been added to the Draw.")
             setErrors(null);
+            const tickets = user.tickets;
+            const availableTickets = tickets.filter(ticket => ticket._id !== ticketID);
+            const events = user.event;
+            events.push(eventId);
+            setUsersData({availableTickets, events});
+            setTimeout(() => history.push('/tickets'), 1000);
         }).catch(err => {
             setErrors("Some error happened!");
             setSuccess(null);
